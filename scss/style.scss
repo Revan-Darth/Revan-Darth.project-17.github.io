@@ -218,6 +218,60 @@ a{
 		}
 	}
 }
+#main{}
+.video {
+	position: relative;
+	&::before{
+		content: '';
+		position: absolute;
+		top: -10vw;
+		content: '';
+		width: 100%;
+		height: 40vw;
+		background: linear-gradient(180deg, rgba(248, 255, 246, 0) 0%, rgba(248, 255, 246, 0.466667) 8.43%, #F8FFF6 21.17%, #E8F9E5 63.02%, rgba(232, 249, 229, 0) 99.48%);
+	}
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+	background: linear-gradient(180deg, rgba(248, 255, 246, 0) 0%, rgba(248, 255, 246, 0.466667) 8.43%, #F8FFF6 21.17%, #E8F9E5 63.02%, rgba(232, 249, 229, 0) 99.48%);
+	&__container {}
+	&__image {
+		position: relative;
+		max-width: 900px;
+		margin: 0 auto;
+		img{
+			border-radius: 24px;
+			width: 100%;
+		}
+	}
+	&__btn{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 137px;
+		height: 137px;
+		background: linear-gradient(94.04deg, #30C917 1.24%, #279A13 98.27%);
+		border-radius: 50%;
+		transition-duration: .3s;
+		border: none;
+		background-color: transparent;
+	    cursor: pointer;
+	}
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-39%, -50%);
+		border-top: 25px solid transparent;
+		border-bottom: 25px solid transparent;
+		border-left: 40px solid #fff;
+	}
+	.decor-bg{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
 
 body._touch{
 
@@ -235,7 +289,11 @@ body._pc{
 			background-color: #FFB1D3;
 			box-shadow: 0px 3px 10px 1px #EF3581;
 		}
-
+	}
+	.video__btn{
+		&:hover{
+			box-shadow: 0 0 8px 1px #30C917;
+		}
 	}
 }
 
