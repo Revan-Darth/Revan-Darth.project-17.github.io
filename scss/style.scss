@@ -223,22 +223,22 @@ a{
 	&__image {
 		max-width: 100%;
 		padding: 10px;
-		position: relative;
-		background: rgba(248, 255, 246, 0.12);
-		backdrop-filter: blur(6px);
+		background-color: rgba(248, 255, 246, 0.12);
+		backdrop-filter: blur(6px); 
 		border-radius: 50%;
-		z-index: 2;
 		pointer-events: none;
-		img{}
+		img{
+			position: relative;
+			z-index: 2;
+		}
 		&::before{
 			content: '';
 			position: absolute;
 			top: 0;
-			z-index: -1;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background: linear-gradient(94.04deg, rgba(48, 201, 23, 0.64) 1.24%, rgba(39, 154, 19, 0.64) 98.27%);
+			background-image: linear-gradient(94.04deg, rgba(48, 201, 23, 0.64) 1.24%, rgba(39, 154, 19, 0.64) 98.27%);
 			filter: blur(200px);
 			width: 100%;
 			height: 100%;
@@ -246,9 +246,10 @@ a{
 	}
 }
 #main{
-	background: linear-gradient(180deg, rgba(248, 255, 246, 0) 0%, rgba(248, 255, 246, 0.466667) 8.43%, #F8FFF6 21.17%, #E8F9E5 63.02%, rgba(232, 249, 229, 0) 99.48%);
+	background-color: #fff;
 }
 .video {
+	background: linear-gradient(180deg, rgba(248, 255, 246, 0) 0%, rgba(248, 255, 246, 0.466667) 8.43%, #F8FFF6 21.17%, #E8F9E5 63.02%, rgba(232, 249, 229, 0) 99.48%);
 	position: relative;
 	&::before{
 		content: '';
@@ -648,6 +649,161 @@ a{
 		}
 	}
 	&__audited-item{}
+}
+.starting {
+	padding-top: 5vw;
+	padding-bottom: 3vw;
+	&__container {}
+	&__pluses {
+		display: grid;
+		grid-template-columns: repeat(2, 50%);
+		grid-auto-rows: 404px;
+		grid-gap: 24px;
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		background-color: #BBDBB5;
+		box-shadow: 0px 4px 28px rgba(27, 17, 8, 0.06);
+		border-radius: 24px;
+		color: #fff;
+		@include adaptive-value("padding", 32, 16, 1);
+		&._tractor{
+			background-image: url('../images/icons/tractor.svg');
+			background-repeat: no-repeat;
+			background-position: 100% 0;
+		}
+		&._earn{
+			background-image: url('../images/icons/contribute.svg');
+			background-repeat: no-repeat;
+			background-position: 100% 0;
+		}
+	}
+	&__item-title {
+		display: block;
+		font-size: rem(40);
+		line-height: 120%;
+		font-weight: 600;
+		@include adaptive-value("margin-bottom", 16, 8, 1);
+	}
+	&__item-descr {
+		font-size: rem(20);
+		line-height: 1.22em;
+		font-weight: 400;
+		@include adaptive-value("margin-bottom", 32, 24, 1);
+	}
+	&__item-link {
+		max-width: 180px;
+		width: 100%;
+		&:active{
+			transform: initial;
+		}
+	}
+}
+.buy-earn {
+	position: relative;
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+	background-image: linear-gradient(0deg, rgba(42, 169, 21, 0.37) 0%, rgba(42, 169, 21, 0) 100%);
+	&__title {
+		margin-bottom: 3.5vh;
+		span{
+			color: #00A23E;
+		}
+	}
+	&__buy {
+		position: relative;
+		margin: 0 auto;
+		max-width: 320px;
+		width: 100%;
+		padding: 10px 18px 10px 10px;
+		display: flex;
+		justify-content: space-between;
+		background: linear-gradient(94.35deg, rgba(255, 255, 255, 0.57) 0%, rgba(255, 255, 255, 0.71) 0.01%, rgba(255, 255, 255, 0.06) 100%);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		box-shadow: 0px 4px 28px rgba(27, 17, 8, 0.06);
+		border-radius: 80px;
+	}
+	&__buy-logo {
+		display: flex;
+	}
+	&__buy-link {
+		font-size: 1rem;
+		font-weight: 400;
+		align-self: center;
+		position: relative;
+		border-radius: 38px;
+		&::after{
+			position: absolute;
+			content: '';
+			top: 28%;
+			right: 8px;
+			background: url('../images/icons/arrow-right.svg')no-repeat;
+			width: 10px;
+			height: 18px;
+		}
+	}
+	.decor-bg{
+		position: absolute;
+		top: -9vw;
+		left: -2vw;
+		transform: rotate(-25deg);
+		@include adaptive-value("width", 510, 290, 1);
+		img{
+			width: 100%;
+		}	
+	}
+}
+.footer {
+	position: relative;
+	font-weight: 600;
+	padding-top: 4vw;
+	padding-bottom: 2.5vw;
+	background-color: #262626;
+	color: #fff;
+	text-align: center;
+	&__container {}
+	&__title {
+		font-weight: 700;
+		font-size: rem(36);
+		line-height: 1.22em;
+		margin-bottom: 5vh;
+	}
+	&__socials {
+		display: grid;
+		grid-template-columns: repeat(4, 168px);
+		justify-content: center;
+		margin-bottom: 4vh;
+		grid-gap: 16px;
+	}
+	&__social {
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		background-color: #373737;
+		border: 1px solid #484848;
+		box-shadow: 0px 4px 28px rgba(27, 17, 8, 0.06);
+		border-radius: 38px;
+	}
+	&__social-icon {
+		max-width: 40px;
+		width: 100%;
+		margin-right: 12px;
+		img{
+			vertical-align: top;
+			width: 100%;
+		}
+	}
+	&__social-name {
+		font-size: rem(20);
+		line-height: 1.22em;
+		color: #f8f8f8;
+	}
+	&__copy {
+		font-size: rem(18);
+		line-height: 1.2em;
+	}
 }
 
 body._touch{
